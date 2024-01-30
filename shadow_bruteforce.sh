@@ -1,12 +1,12 @@
 #!/bin/bash
 
-hash_verdadeira=$3
+hashtrue=$3
 
 echo "Types of hash:"
-echo "1 - MD5"
-echo "2a - Blowfish"
-echo "5 - SHA-256"
-echo "6 - SHA-512
+echo "1  | MD5"
+echo "2a | Blowfish"
+echo "5  | SHA-256"
+echo "6  | SHA-512
 "
 
 if [ $# -ne 3 ]; then
@@ -22,7 +22,7 @@ fi
 while IFS= read -r line; do
     passwd=$(openssl passwd $4 -salt "$2" "$line" | cut -d "$" -f4)
 
-    if [ "$passwd" == "$hash_verdadeira" ]; then
+    if [ "$passwd" == "$hashtrue" ]; then
         echo "Password: $line"
         exit 0
     else
